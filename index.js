@@ -21,10 +21,35 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+// const listBelanjaan = null;
+const listBelanjaan = function(sebutinLagiData) {
+  let jumlahData = sebutinLagiData.length;
+  let hasil = [];
+  for (let daftar=0; daftar < jumlahData; daftar++) {
+    hasil.push("- " +sebutinLagiData[daftar].nama + " x "+ sebutinLagiData[daftar].kuantitas);
+  }
+  return hasil;
+};
+
+// console.log(listBelanjaan2())
+//  console.log(listBelanjaan(dataBelanjaan));
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+// const totalBelanjaan = null;
+
+const totalBelanjaan = function(sebutinLagiData) {
+  let dataKompilasiarr =[];
+  let jumlahData = sebutinLagiData.length;
+  for (let daftar=0; daftar < jumlahData; daftar++) {
+    dataKompilasiarr.push(sebutinLagiData[daftar].harga * sebutinLagiData[daftar].kuantitas); 
+  }
+  let total = 0;
+  for (let indiex=0; indiex < dataKompilasiarr.length; indiex++) {
+    total += dataKompilasiarr[indiex];
+  }
+  return total;
+};
+console.log(totalBelanjaan(dataBelanjaan));
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
